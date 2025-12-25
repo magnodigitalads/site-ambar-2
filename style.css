@@ -8,52 +8,93 @@ body {
   scroll-behavior: smooth;
   }
 
-/* === Cabeçalho === */
-header {
+/* === Cabeçalho geral === */
+.topo {
   background-color: #000;
   color: #fff;
-  text-align: center;
-  padding: 20px;
-  
-   
-}
-
-header img {
-  max-width: 100px;
-  border-radius: 30%;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  padding: 15px 40px;
-  
- 
+  justify-content: space-between;
+  padding: 10px 30px;
+  position: relative;
+  z-index: 1000;
 }
 
-  
-
+.topo img {
+  max-width: 90px;
+  border-radius: 50%;
+  margin: 0;
+}
 
 /* === Menu === */
-nav {
-  background-color: #111;
+.menu {
+  list-style: none;
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
- }
- 
- nav a {
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.menu li a {
   color: #fff;
   text-decoration: none;
   padding: 15px 25px;
   display: block;
   font-weight: 600;
   transition: 0.3s;
-  
-  
 }
 
-nav a:hover {
+.menu li a:hover {
   background-color: #d4af37;
   color: #000;
+}
+
+/* === Ícone hambúrguer === */
+.menu-icon {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.menu-icon span {
+  height: 3px;
+  width: 25px;
+  background: #d4af37;
+  margin: 4px 0;
+  transition: 0.4s;
+}
+
+/* === Checkbox oculto === */
+#menu-toggle {
+  display: none;
+}
+
+/* === Responsivo (mobile) === */
+@media (max-width: 768px) {
+  .menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    flex-direction: column;
+    background-color: #111;
+    width: 100%;
+    text-align: center;
+  }
+
+  .menu li a {
+    border-bottom: 1px solid #333;
+  }
+
+  /* Quando o menu está ativo */
+  #menu-toggle:checked + .menu-icon + .menu {
+    display: flex;
+  }
+
+  .menu-icon {
+    display: flex;
+  }
 }
 
 
@@ -447,5 +488,194 @@ footer img {
     border-bottom: 1px solid #333;
   }
 }
+/* === MENU HAMBÚRGUER === */
+.navbar {
+  background-color: #111;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* centraliza os links no desktop */
+  padding: 10px 20px;
+  position: relative;
+  z-index: 100;
+}
+
+/* Esconde o checkbox */
+#menu-toggle {
+  display: none;
+}
+
+/* Ícone hamburguer */
+.menu-icon {
+  width: 30px;
+  height: 22px;
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  display: none; /* só aparece no mobile */
+  z-index: 101;
+}
+
+/* Barrinhas */
+.menu-icon span {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: #d4af37;
+  border-radius: 3px;
+  margin: 5px 0;
+  transition: 0.3s;
+}
+
+/* Efeito X ao clicar */
+#menu-toggle:checked + .menu-icon span:nth-child(1) {
+  transform: rotate(45deg) translateY(8px);
+}
+#menu-toggle:checked + .menu-icon span:nth-child(2) {
+  opacity: 0;
+}
+#menu-toggle:checked + .menu-icon span:nth-child(3) {
+  transform: rotate(-45deg) translateY(-8px);
+}
+
+/* Menu padrão (desktop) */
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 40px;
+  margin: 0;
+  padding: 0;
+}
+
+.menu li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 8px 12px;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.menu li a:hover {
+  background-color: #d4af37;
+  color: #000;
+}
+
+/* Responsivo (mobile) */
+@media (max-width: 768px) {
+  .menu-icon {
+    display: block;
+  }
+
+  .menu {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: #111;
+    flex-direction: column;
+    align-items: center;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+  }
+
+  #menu-toggle:checked + .menu-icon + .menu {
+    max-height: 300px;
+  }
+
+  .menu li {
+    width: 100%;
+    text-align: center;
+  }
+
+  .menu li a {
+    display: block;
+    padding: 15px 0;
+    border-bottom: 1px solid #333;
+  }
+}
 
 
+/* Remove todos os espaçamentos entre topo, menu e primeira seção */
+body, header, nav, section {
+  margin: 0;
+  padding: 0;
+}
+
+/* === Cabeçalho === */
+header {
+  background-color: #000;
+  color: #fff;
+  padding: 10px 30px;
+  display: flex;
+  align-items: center;
+}
+
+header img {
+  max-width: 100px;
+  border-radius: 50%;
+  margin: 0;
+}
+
+/* === Menu === */
+.navbar {
+  background-color: #111;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  top: 0;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+.navbar .menu {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar .menu li {
+  margin: 0;
+}
+
+.navbar .menu li a {
+  color: #fff;
+  text-decoration: none;
+  padding: 15px 25px;
+  display: block;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.navbar .menu li a:hover {
+  background-color: #d4af37;
+  color: #000;
+}
+
+/* === Remove espaço entre o menu e o banner === */
+.banner {
+  margin-top: 0;
+  padding-top: 0;
+  background: url('Banners2.jpg') center/cover no-repeat;
+  color: #fff;
+  text-align: center;
+  padding: 140px 20px;
+}
+
+/* === Primeira seção colada === */
+section:first-of-type {
+  margin-top: 0;
+}
+
+/* === Remove espaçamento global que causava faixa branca === */
+html, body {
+  margin: 0;
+  padding: 0;
+}
