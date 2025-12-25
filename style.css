@@ -1,0 +1,323 @@
+/* === Estilo geral === */
+body {
+  font-family: 'Lato', sans-serif;
+  margin: 0;
+  background-color: #fff;
+  color: #222;
+  line-height: 1.6;
+  scroll-behavior: smooth;
+  }
+
+/* === Cabeçalho === */
+header {
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  
+   
+}
+
+header img {
+  max-width: 100px;
+  border-radius: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 15px 40px;
+  
+ 
+}
+
+  
+
+
+/* === Menu === */
+nav {
+  background-color: #111;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+ }
+ 
+ nav a {
+  color: #fff;
+  text-decoration: none;
+  padding: 15px 25px;
+  display: block;
+  font-weight: 600;
+  transition: 0.3s;
+  
+  
+}
+
+nav a:hover {
+  background-color: #d4af37;
+  color: #000;
+}
+
+/* === Seções === */
+section {
+  padding: 60px 20px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+h2 {
+  color: #d4af37;
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 2em;
+}
+
+h3 {
+  color: #d4af37;
+  margin-top: 40px;
+}
+
+/* === Banner === */
+.banner {
+  background: url('Banners2.jpg') center/cover no-repeat;
+  color: #fff;
+  text-align: center;
+  padding: 150px 20px;
+  
+}
+
+.banner h1 {
+  font-size: 2.5em;
+  color: #d4af37;
+}
+
+.banner p {
+  font-size: 1.2em;
+}
+
+.btn {
+  background-color: #d4af37;
+  color: #000;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  display: inline-block;
+  margin-top: 20px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+/* === Contato === */
+.contact {
+  text-align: center;
+  font-size: 1.1em;
+}
+
+/* === Rodapé === */
+footer {
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+  padding: 30px 10px;
+}
+
+footer img {
+  width: 120px;
+  margin-bottom: 10px;
+  border-radius: 15%;
+}
+
+.social-icons {
+  margin: 20px 0;
+}
+
+.social-icons a {
+  display: inline-flex;            /* Flex para centralizar o conteúdo */
+  justify-content: center;         /* Centraliza horizontalmente */
+  align-items: top;             /* Centraliza verticalmente */
+  margin: 0 6px;
+  background-color: #d4af37;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  transition: 0.3s;
+}
+
+.social-icons a:hover {
+  background-color: #fff;
+  color: #d4af37;
+}
+.social-icons a img {
+  width: 26px;   /* antes podia estar 22px */
+  height: 26px;
+  border-radius: 50%;
+  
+}
+.contact a {
+  color: #d4af37;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.contact a:hover {
+  text-decoration: underline;
+  color: #000;
+}
+
+/* Efeito Parallax base */
+.parallax {
+  background-attachment: fixed;      /* cria o efeito parallax */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;            /* adapta a imagem ao tamanho da tela */
+  color: #fff;
+  text-align: center;
+  position: relative;
+  
+  
+}
+
+/* Espaçamento interno das seções */
+.parallax .content {
+  background: rgba(0, 0, 0, 0.281);    /* camada escura para contraste do texto */
+  padding: 80px 10%;
+  border-radius: 10px;
+}
+
+/* Imagens específicas de cada seção */
+.quem-somos-bg {
+  background-image: url("imagens/quem-somos.jpg");
+  
+}
+
+.servicos-bg {
+  background-image: url("imagens/nossos-serviços.jpg");
+}
+
+.projeto-bg {
+  background-image: url("imagens/projeto-cultural.jpg");
+}
+
+/* Responsividade para mobile (desativa parallax fixo em telas pequenas) */
+@media (max-width: 768px) {
+  .parallax {
+    background-attachment: scroll;   /* melhora desempenho no celular */
+    background-size: cover;
+  }
+
+  .parallax .content {
+    padding: 80px 5%;
+  }
+
+}
+
+/* Garante que as seções parallax ocupem toda a largura */
+.parallax {
+  max-width: 100%;     /* remove a limitação */
+  width: 100vw;        /* ocupa toda a largura da janela */
+  margin: 0;           /* remove centralização */
+  padding: 120px 0;    /* cria espaçamento interno só vertical */
+}
+
+/* Centraliza o conteúdo sobre a imagem parallax */
+.parallax {
+  display: flex;
+  align-items: center;      /* centraliza verticalmente */
+  justify-content: center;  /* centraliza horizontalmente */
+  text-align: center;
+  height: 100vh;            /* ocupa 100% da altura da tela */
+  position: relative;
+}
+
+.parallax .content {
+  background: rgba(0, 0, 0, 0.55);   /* fundo translúcido para contraste */
+  padding: 60px 8%;
+  border-radius: 12px;
+  color: #fff;
+  max-width: 800px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Responsividade do texto nas seções parallax */
+@media (max-width: 992px) {
+  .parallax .content {
+    padding: 40px 6%;
+    max-width: 90%;
+  }
+
+  .parallax h2 {
+    font-size: 1.8em;
+  }
+
+  .parallax p {
+    font-size: 1em;
+    line-height: 1.5;
+  }
+}
+
+@media (max-width: 600px) {
+  .parallax {
+    height: 80vh; /* reduz um pouco a altura no celular */
+  }
+
+  .parallax .content {
+    padding: 30px 8%;
+  }
+
+  .parallax h2 {
+    font-size: 1.4em;
+  }
+
+  .parallax p {
+    font-size: 0.95em;
+  }
+}
+
+/* === Efeito fade-in ao rolar até a seção === */
+
+/* 1️⃣ Define a animação base */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 2️⃣ Começa invisível */
+.parallax .content {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+/* 3️⃣ Quando a seção entra na tela */
+.parallax:is(:hover, :target, :focus-within, :has(:is(h2, p):hover)) .content,
+.parallax:in-view .content {
+  animation: fadeInUp 1.2s ease forwards;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 4️⃣ Pequenas melhorias */
+.parallax h2 {
+  animation-delay: 0.3s;
+}
+
+.parallax p {
+  animation-delay: 0.6s;
+}
+
+/* 5️⃣ Suporte para o seletor moderno */
+@supports not selector(:in-view) {
+  /* Fallback simples: anima automaticamente */
+  .parallax .content {
+    animation: fadeInUp 1.2s ease forwards;
+  }
+}
