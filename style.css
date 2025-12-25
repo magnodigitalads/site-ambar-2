@@ -56,6 +56,8 @@ nav a:hover {
   color: #000;
 }
 
+
+
 /* === Seções === */
 section {
   padding: 60px 20px;
@@ -319,5 +321,83 @@ footer img {
   /* Fallback simples: anima automaticamente */
   .parallax .content {
     animation: fadeInUp 1.2s ease forwards;
+  }
+}
+/* === MENU HAMBÚRGUER AJUSTADO === */
+.navbar {
+  background-color: #111;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 40px;
+  position: relative;
+}
+
+.navbar .logo img {
+  width: 90px;
+  border-radius: 50%;
+}
+
+/* Esconde o checkbox */
+#menu-toggle {
+  display: none;
+}
+
+/* Ícone hamburguer */
+.menu-icon {
+  font-size: 28px;
+  color: #d4af37;
+  cursor: pointer;
+  display: none; /* só aparece no mobile */
+}
+
+/* === Menu Desktop === */
+.menu {
+  list-style: none;
+  display: flex;
+  justify-content: center;   /* centraliza horizontalmente */
+  flex: 1;                   /* ocupa espaço entre logo e borda */
+  gap: 40px;
+  margin: 0;
+  padding: 0;
+}
+
+.menu li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.menu li a:hover {
+  color: #d4af37;
+}
+
+/* === Responsivo (Mobile) === */
+@media (max-width: 768px) {
+  .menu {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background-color: #111;
+    flex-direction: column;
+    align-items: center;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.4s ease;
+  }
+
+  /* Mostra o menu quando o checkbox estiver marcado */
+  #menu-toggle:checked + .menu-icon + .menu {
+    max-height: 300px;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+
+  .menu {
+    gap: 20px;
   }
 }
