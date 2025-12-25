@@ -323,7 +323,7 @@ footer img {
     animation: fadeInUp 1.2s ease forwards;
   }
 }
-/* === MENU HAMBÚRGUER AJUSTADO === */
+/* === MENU REFEITO === */
 .navbar {
   background-color: #111;
   display: flex;
@@ -331,8 +331,10 @@ footer img {
   justify-content: space-between;
   padding: 10px 40px;
   position: relative;
+  z-index: 100;
 }
 
+/* Logo alinhado à esquerda */
 .navbar .logo img {
   width: 90px;
   border-radius: 50%;
@@ -343,20 +345,21 @@ footer img {
   display: none;
 }
 
-/* Ícone hamburguer */
+/* Ícone do menu hamburguer */
 .menu-icon {
-  font-size: 28px;
+  font-size: 30px;
   color: #d4af37;
   cursor: pointer;
   display: none; /* só aparece no mobile */
+  transition: 0.3s;
 }
 
 /* === Menu Desktop === */
 .menu {
   list-style: none;
   display: flex;
-  justify-content: center;   /* centraliza horizontalmente */
-  flex: 1;                   /* ocupa espaço entre logo e borda */
+  justify-content: center;   /* centraliza os itens */
+  flex: 1;
   gap: 40px;
   margin: 0;
   padding: 0;
@@ -366,11 +369,15 @@ footer img {
   color: #fff;
   text-decoration: none;
   font-weight: 600;
-  transition: 0.3s;
+  transition: color 0.3s, background-color 0.3s;
+  padding: 8px 12px;
+  border-radius: 5px;
 }
 
+/* Hover com contraste melhor */
 .menu li a:hover {
-  color: #d4af37;
+  background-color: #d4af37;
+  color: #000;
 }
 
 /* === Responsivo (Mobile) === */
@@ -385,19 +392,34 @@ footer img {
     align-items: center;
     max-height: 0;
     overflow: hidden;
-    transition: all 0.4s ease;
+    transition: max-height 0.4s ease;
+    z-index: 99;
   }
 
-  /* Mostra o menu quando o checkbox estiver marcado */
+  /* Quando o menu está aberto */
   #menu-toggle:checked + .menu-icon + .menu {
     max-height: 300px;
   }
 
+  .menu li {
+    width: 100%;
+    text-align: center;
+  }
+
+  .menu li a {
+    display: block;
+    padding: 15px 0;
+    border-bottom: 1px solid #333;
+  }
+
+  /* Mostra o ícone hamburguer */
   .menu-icon {
     display: block;
   }
 
-  .menu {
-    gap: 20px;
+  /* Ícone muda de cor quando o menu está aberto */
+  #menu-toggle:checked + .menu-icon {
+    color: #fff;
   }
 }
+
