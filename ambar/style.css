@@ -1,0 +1,383 @@
+@charset "UTF-8";
+
+/* =========================
+   RESET / BASE
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  background-color: #ffffff;
+  color: #222;
+  line-height: 1.6;
+}
+
+a {
+  color: #d4af37;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* =========================
+   CONTAINER
+========================= */
+.container {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* =========================
+   HEADER
+========================= */
+.topo {
+  background-image: url(../imagem2/escritorio.jpg);
+  background-size: cover;
+  background-position: center 30%;
+  background-repeat: no-repeat;
+  width: 100%;
+  min-height: 65vh;
+  display: flex;
+  align-items: center;
+  
+}
+
+.topo img {
+  max-width: 100px;
+  border-radius: 100px;
+}
+
+/* =========================
+   MENU
+========================= */
+.menu-principal {
+  position: absolute;
+  top: 50%;
+  right: 10%;
+  transform: translateY(-100%);
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+}
+
+/* UL controla a direção */
+.menu-principal ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row; /* 🔥 ISSO deixa vertical */
+  gap: 30px;
+}
+
+.menu-principal li {
+  padding: 0;
+}
+
+/* Links */
+.menu-principal a {
+  color: #000;
+  font-weight: 600;
+  font-size: 1.3em;
+  text-decoration: none;
+  position: relative;
+}
+
+/* Linha animada embaixo */
+.menu-principal a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0;
+  height: 2px;
+  background: #d4af37;
+  transition: 0.3s;
+}
+
+.menu-principal a:hover::after {
+  width: 100%;
+}
+
+/* Botão WhatsApp */
+.btn-whats {
+  margin-top: 30px;
+  background: #25d366;
+  color: #000;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+
+/* =========================
+   SEÇÕES GERAIS
+========================= */
+section {
+  padding: 50px 0;
+}
+
+h1 {
+  font-size: 1.9rem;
+  margin-bottom: 15px;
+  color: #000;
+}
+
+h2 {
+  font-size: 1.6rem;
+  margin-bottom: 20px;
+  color: #000;
+}
+
+h3 {
+  font-size: 2.5rem;
+  margin: 30px 0 10px;
+  color: #000;
+}
+
+h4 {
+  font-size: 1.1rem;
+  margin: 20px 0 8px;
+}
+
+p {
+  margin-bottom: 15px;
+}
+
+/* =========================
+   HOME
+========================= */
+#home {
+  background: #f7f7f7;
+  text-align: center;
+}
+
+#home .subtitulo {
+  font-size: 1rem;
+  margin-bottom: 25px;
+}
+
+.btn-cta {
+  display: inline-block;
+  background: #d4af37;
+  color: #000;
+  padding: 12px 22px;
+  font-weight: 700;
+  border-radius: 6px;
+}
+
+/* =========================
+   LISTAS
+========================= */
+ul {
+  margin: 15px 0 15px 20px;
+}
+
+ul li {
+  margin-bottom: 8px;
+}
+
+/* =========================
+   DESTAQUES
+========================= */
+.destaque {
+  margin: 25px 0;
+  padding: 15px;
+  background: #f1f1f1;
+  border-left: 5px solid #d4af37;
+  font-weight: 700;
+}
+
+.frase-impacto {
+  margin-top: 20px;
+  font-style: italic;
+  font-weight: 600;
+  color: #444;
+}
+
+/* =========================
+   SOBRE
+========================= */
+.observacao {
+  margin-top: 20px;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* =========================
+   DEPOIMENTOS
+========================= */
+#depoimentos {
+  background: #f9f9f9;
+}
+
+/* =========================
+   CONTATO
+========================= */
+#contato p {
+  margin-bottom: 10px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+footer {
+  background: #000;
+  color: #fff;
+  padding: 30px 0;
+  text-align: center;
+}
+
+footer p {
+  font-size: 0.9rem;
+}
+
+
+/* =========================
+   EQUIPE
+========================= */
+.equipe {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.equipe-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+  margin-top: 25px;
+}
+
+.membro img {
+  width: 430px;
+  height: 430px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid #d4af37;
+  margin-bottom: 12px;
+  
+}
+
+.membro h4 {
+  margin-bottom: 6px;
+  font-weight: 700;
+  font-size: 2rem;
+  color: #000;
+  letter-spacing: 0.5px;
+}
+
+.membro p {
+  font-size: 1.5rem;
+  color: #555;
+}
+
+
+/* Desktop */
+
+
+
+
+/* =========================
+   SOCIAL ICONS
+========================= */
+.social-icons {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.social-icons a {
+  width: 34px;
+  height: 34px;
+  background: #d4af37;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+}
+
+.social-icons a:hover {
+  background: #fff;
+}
+
+.social-icons img {
+  width: 18px;
+  height: 18px;
+}
+
+/* =========================
+   SOBRE A ÂMBAR - PARALLAX
+========================= */
+.parallax-equipe {
+  background-image: url("../imagem2/equipe\ ambar.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  position: relative;
+  color: #fff;
+}
+
+/* Camada escura para leitura */
+.parallax-equipe .overlay {
+  background: rgba(19, 18, 18, 0.233);
+  min-height: 70vh;               /* controla o tamanho do parallax */
+  display: flex;
+  align-items: center;
+}
+
+/* Texto */
+.parallax-equipe h2 {
+  color: #d4af37;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.parallax-equipe .subtitulo {
+  text-align: center;
+  font-size: 1.1rem;
+  max-width: 800px;
+  margin: 0 auto 30px;
+}
+
+/* Pilares */
+.pilares {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  max-width: 500px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 0;
+}
+
+.pilares li {
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+/* Desktop */
+@media (min-width: 768px) {
+  .pilares {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile - remove parallax (boa prática) */
+@media (max-width: 768px) {
+  .parallax-equipe {
+    background-attachment: scroll;
+  }
+}
+
