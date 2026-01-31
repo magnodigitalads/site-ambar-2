@@ -16,6 +16,7 @@ body {
   color: #222;
   line-height: 1.6;
   
+  
 }
 
 a {
@@ -43,7 +44,7 @@ a:hover {
 .topo {
   background-image: url(../imagem2/escritorio.jpg);
   background-size: cover;
-  background-position: center 20%;
+  background-position: center 40%;
   background-repeat: no-repeat;
   width: 100vw;
   height: 100vh;
@@ -76,6 +77,7 @@ a:hover {
   left: 150px; /* Alinha à esquerda */
   width: 100%; /* Ocupa toda a largura */
   box-sizing: border-box; /* Garante que o padding não afete a largura total */
+  
 }
 
 /* UL controla a direção */
@@ -117,15 +119,16 @@ a:hover {
 
 /* Botão WhatsApp */
 .btn-whats {
+  
   margin-top: 10px;
   left: -180px;
   background: #25d366;
   color: #000;
   padding: 10px 20px;
-  border-radius: 6px;
+  border-radius: 50px;
   font-weight: 700;
   text-decoration: none;
-  
+  box-shadow: #222;
 }
 
 
@@ -167,6 +170,7 @@ p {
    HOME
 ========================= */
 #home {
+  padding: 40px;
   background: #f7f7f7;
   text-align: center;
 }
@@ -182,7 +186,7 @@ p {
   color: #000;
   padding: 12px 22px;
   font-weight: 700;
-  border-radius: 6px;
+  border-radius: 60px;
 }
 
 /* =========================
@@ -454,3 +458,4 @@ footer p {
   from { opacity: 0; transform: translateX(40px); }
   to   { opacity: 1; transform: translateX(0); }
 }
+
