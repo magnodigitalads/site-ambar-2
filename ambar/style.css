@@ -7,6 +7,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  
 }
 
 body {
@@ -14,6 +15,7 @@ body {
   background-color: #ffffff;
   color: #222;
   line-height: 1.6;
+  
 }
 
 a {
@@ -32,7 +34,7 @@ a:hover {
   width: 100%;
   max-width: 1100px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 10px;
 }
 
 /* =========================
@@ -41,45 +43,51 @@ a:hover {
 .topo {
   background-image: url(../imagem2/escritorio.jpg);
   background-size: cover;
-  background-position: center 30%;
+  background-position: center 20%;
   background-repeat: no-repeat;
-  width: 100%;
-  min-height: 65vh;
+  width: 100vw;
+  height: 100vh;
   display: flex;
   align-items: center;
   
 }
 
 .topo img {
+  position: relative;
+  margin: 0px;
   max-width: 100px;
-  border-radius: 100px;
+  border-radius: 50px;
+  top: -250px;  /* Desloca 50px para baixo a partir de onde ela estaria */
+  left: -70px; /* Desloca 20px para a direita a partir de onde ela estaria */
 }
+
+
 
 /* =========================
    MENU
 ========================= */
 .menu-principal {
-  position: absolute;
-  top: 50%;
-  right: 10%;
-  transform: translateY(-100%);
-  display: flex;
-  flex-direction: column;
-  align-items: baseline;
+  display: flex; /* Ativa o Flexbox */
+  justify-content: space-between; /* Espaça a logo e o menu */
+  align-items: center; /* Alinha verticalmente ao centro */
+  padding: 20px 40px; /* Adiciona um espaçamento interno */
+  position: absolute; /* Posiciona sobre a imagem de fundo */
+  top: 10px; /* Alinha no topo */
+  left: 150px; /* Alinha à esquerda */
+  width: 100%; /* Ocupa toda a largura */
+  box-sizing: border-box; /* Garante que o padding não afete a largura total */
 }
 
 /* UL controla a direção */
 .menu-principal ul {
-  list-style: none;
+  list-style: none; /* Remove os pontos da lista */
   margin: 0;
   padding: 0;
-  display: flex;
-  flex-direction: row; /* 🔥 ISSO deixa vertical */
-  gap: 30px;
+  display: flex; /* Coloca os itens do menu em linha */
 }
 
 .menu-principal li {
-  padding: 0;
+   margin-left: 20px; /* Espaçamento entre os itens do menu */
 }
 
 /* Links */
@@ -109,13 +117,15 @@ a:hover {
 
 /* Botão WhatsApp */
 .btn-whats {
-  margin-top: 30px;
+  margin-top: 10px;
+  left: -180px;
   background: #25d366;
   color: #000;
   padding: 10px 20px;
   border-radius: 6px;
   font-weight: 700;
   text-decoration: none;
+  
 }
 
 
@@ -123,7 +133,7 @@ a:hover {
    SEÇÕES GERAIS
 ========================= */
 section {
-  padding: 50px 0;
+  width: 100%;
 }
 
 h1 {
@@ -248,6 +258,7 @@ footer p {
 .equipe {
   margin-top: 40px;
   text-align: center;
+  
 }
 
 .equipe-grid {
@@ -255,6 +266,7 @@ footer p {
   grid-template-columns: 1fr;
   gap: 30px;
   margin-top: 25px;
+  
 }
 
 .membro img {
@@ -381,3 +393,64 @@ footer p {
   }
 }
 
+.quem-somos-layout {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+.qs-text {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 60px 40px;
+  border-radius: 16px;
+  color: #fff;
+  text-align: center;
+}
+
+.qs-text h2 {
+  color: #d4af37;
+  margin-bottom: 20px;
+}
+.qs-img img {
+  width: 100%;
+  max-width: 420px;   /* AQUI você controla o tamanho */
+  height: 400px;      /* altura visual forte */
+  border-radius: 10px;
+  border: 3px solid #d4af37;
+  object-fit: cover;
+}
+
+
+@media (max-width: 900px) {
+  .quem-somos-layout {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .qs-img img {
+    max-width: 220px;
+    margin: 0 auto;
+    display: block;
+  }
+
+  .qs-text {
+    padding: 40px 20px;
+  }
+}
+.qs-img img {
+  animation: slideLeft 1.2s ease forwards;
+}
+
+.direita {
+  animation: slideRight 1.2s ease forwards;
+}
+
+@keyframes slideLeft {
+  from { opacity: 0; transform: translateX(-40px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideRight {
+  from { opacity: 0; transform: translateX(40px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
