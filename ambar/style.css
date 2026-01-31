@@ -58,8 +58,8 @@ a:hover {
   margin: 0px;
   max-width: 100px;
   border-radius: 50px;
-  top: -250px;  /* Desloca 50px para baixo a partir de onde ela estaria */
-  left: -70px; /* Desloca 20px para a direita a partir de onde ela estaria */
+  top: -200px;  /* Desloca 50px para baixo a partir de onde ela estaria */
+  left: -80px; /* Desloca 20px para a direita a partir de onde ela estaria */
 }
 
 
@@ -89,6 +89,7 @@ a:hover {
 }
 
 .menu-principal li {
+   border-radius: 20px;
    margin-left: 20px; /* Espaçamento entre os itens do menu */
 }
 
@@ -173,6 +174,7 @@ p {
   padding: 40px;
   background: #f7f7f7;
   text-align: center;
+  
 }
 
 #home .subtitulo {
